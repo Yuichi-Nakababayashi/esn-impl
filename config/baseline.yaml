@@ -1,0 +1,31 @@
+data:
+  length: 4000 
+  save_path: "narma_train_data.csv"
+  narma_num: 10
+  uniform_arg: [0.0,0.5]
+  ignore_num: 100 
+  seed: 123
+
+esn_model:
+  ignore_num: ${data.ignore_num}
+  save_path: esn_train_state.npy
+  num_unit: 300
+  w_in_dist: [-0.1,0.1]
+  seed: ${data.seed} 
+  w_internal_dist: [-1.0,1.0]
+  nu_std: [-0.0001,0.0001]
+
+train:
+  is_square: True 
+  ignore_num: ${data.ignore_num}
+
+evaluation:
+  length: 2000
+  seed: ${data.seed} 
+  is_square: ${train.is_square}
+  img_path: "evaluation.png"
+
+# hydra setting
+hydra:
+  run:
+    dir: "baseline"
