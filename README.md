@@ -1,4 +1,4 @@
-# esn-impl
+# Simple implementation of Echo State Network with NARMA benchmark task
 basic echo state network implementation
 
 ## problem setting
