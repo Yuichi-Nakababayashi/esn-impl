@@ -1,0 +1,19 @@
+esn_model:
+  num_unit: 100
+  w_in_dist:
+  - -0.1
+  - 0.1
+  seed: 123
+  w_internal_dist:
+  - -1.0
+  - 1.0
+  nu_dist:
+  - 0.0
+  - 0.0
+  zero_density: 0.05
+environment:
+  name: CartPole-v0
+cma_es:
+  max_num_gen: 50
+  population_size: 300
+  sigma: 5.0

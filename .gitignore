@@ -1,5 +1,5 @@
 __pycache__/*
 sparse_exp.py
 esn_basic/baseline/*
-esn_basic/__pycache__/*
+*/__pycache__/*
 .vscode/*
