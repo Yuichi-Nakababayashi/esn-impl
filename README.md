@@ -15,3 +15,9 @@ As `hydra`, python library for hyper parameter control, is used, all the output 
 - narma_data_gen.py: code to generate narma dataset
 - esn_offline.py: training and inference code for offline dataset 
 - main_offline.py: main code integrating everything above
+
+## how to run
+### necessary libraries
+see `requirements.txt`
+### environment variables
+add `/path/to/esn_basic` to `$PYTHONPATH`

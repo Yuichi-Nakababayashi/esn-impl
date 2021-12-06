@@ -2,10 +2,8 @@ import random
 from typing import List, Tuple
 
 import numpy as np
-import pandas as pd
 from omegaconf.dictconfig import DictConfig
 from scipy.sparse import csr_matrix
-from tqdm import tqdm
 
 from narma_data_gen import narma_gen
 
@@ -19,7 +17,7 @@ def esn_forward(
     seed: int = 123,
     w_internal_dist: List[float] = [-1.0, 1.0],
     nu_std: List[float] = [-1e-3, 1e-3],
-    w_internal_path: str = None
+    w_internal_path: str = None,
 ):
     """function to calcualte the internal state
     Args:
@@ -34,6 +32,7 @@ def esn_forward(
     # 0. set seed
     np.random.seed(seed)
     # 1. generate w_in
+    # TODO: w_inは、trainとevaluationで別々のものを使っても問題ないのか確認する
     w_in_dist = w_in_dist + [num_unit]
     w_in = np.random.uniform(*w_in_dist)
     # 2. generate internal weight (annotated with W in a paper)
@@ -54,7 +53,7 @@ def esn_forward(
     # convert to csr mat
     else:
         w_internal = np.load(w_internal_path)
-    if(w_internal_path is None):
+    if w_internal_path is None:
         np.save("w_mat.npy", w_internal)
     w_internal = csr_matrix(w_internal)
     # 3. calculate the internal state one by one
@@ -64,7 +63,6 @@ def esn_forward(
     w_internal_dist[-1] = num_unit
     nu_std = nu_std + [num_unit]
     # generate the first internal state
-    x_t[0] = np.random.uniform(*w_internal_dist) + np.random.uniform(*nu_std)
     for t in range(length - 1):
         nu = np.random.uniform(*nu_std)
         x_t[t + 1] = np.tanh(w_internal @ x_t[t] + w_in * narma_in[t] + nu)
