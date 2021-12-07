@@ -1,6 +1,6 @@
 esn_model:
-  num_unit: 100
-  w_in_dist: [-0.1,0.1]
+  num_unit: 500 
+  w_in_dist: [-1.0,1.0]
   seed: 123 
   w_internal_dist: [-1.0,1.0]
   nu_dist: [0.0,0.0]
@@ -8,13 +8,14 @@ esn_model:
 
 environment:
   name: CartPole-v0
+  t_max: 200
 
 cma_es:
-  max_num_gen: 50 
-  population_size: 300 
-  sigma: 5.0
+  max_num_gen: 30 
+  population_size: 200 
+  sigma: 30.0
 
 # hydra setting
 hydra:
   run:
-    dir: "esn_carpole"
+    dir: esn_${environment.name}

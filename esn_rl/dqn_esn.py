@@ -76,7 +76,7 @@ class ESN:
         self.internal_state = np.zeros(self.num_unit)
 
 
-def cma_objective(env, w_out: np.array, esn: Type[ESN]) -> float:
+def cma_objective(env, w_out: np.array, esn: Type[ESN], t_max: int) -> float:
     """objective function
     Args:
         env: environment
@@ -85,12 +85,15 @@ def cma_objective(env, w_out: np.array, esn: Type[ESN]) -> float:
     Return:
         reward: reward from the environment
     """
+
     def gen_action(action: float) -> int:
         """function to generate the action from float value
-        if action >= 0, take 0 action, 1 otherwise 
+        if action >= 0, take 0 action, 1 otherwise
         """
         return int(action >= 0)
+
     time_step = 0
+    reward = 0
     esn.reset()
     state = env.reset()
     while 1:
@@ -98,17 +101,32 @@ def cma_objective(env, w_out: np.array, esn: Type[ESN]) -> float:
         action = np.array(esn_state.T @ w_out)
         # NOTE: convert to discrete action space
         action = gen_action(action)
-        next_state, _, done, _ = env.step(action)
+        next_state, r, done, _ = env.step(action)
+        reward += r
         state = next_state
-        if done or time_step == 100:
+        if done or time_step == t_max:
             break
         time_step += 1
-    return time_step * (-1)
+    return reward * (-1)
+
+
+def gen_reward_graph(
+    reward_list: List[float], file_path: str, title: str = "training..."
+):
+    """function to generate png and save it to the specified path"""
+    plt.clf()
+    plt.plot(list(range(len(reward_list))), reward_list)
+    plt.title(title)
+    plt.xlabel("num epoch")
+    plt.ylabel("avg reward")
+    plt.title("training...")
+    plt.savefig(file_path)
 
 
 @hydra.main(config_path="config", config_name="config")
 def main(cfg: DictConfig) -> None:
     env_cfg = cfg["environment"]
+    t_max = env_cfg["t_max"]
     env = gym.make(env_cfg["name"])
     o_space = env.observation_space.shape[0]
     esn_cfg = cfg["esn_model"]
@@ -130,7 +148,7 @@ def main(cfg: DictConfig) -> None:
         for _ in range(optimizer.population_size):
             x = optimizer.ask()
             out_mean += x
-            reward = cma_objective(env, x, esn)
+            reward = cma_objective(env, x, esn, t_max=t_max)
             tot_reward += reward * -1
             solutions.append((x, reward))
         out_mean /= optimizer.population_size
@@ -141,8 +159,8 @@ def main(cfg: DictConfig) -> None:
             best_score = avg_score
             np.save("w_out_avg.npy", out_mean)
         print(f"tot reward: {avg_score}")
-    plt.plot(list(range(len(avg_rewards))), avg_rewards)
-    plt.savefig("avg_rewards.png")
+        gen_reward_graph(avg_rewards, "avg_rewards.png")
+    gen_reward_graph(avg_rewards, "avg_rewards.png", "training done")
 
 
 if __name__ == "__main__":
