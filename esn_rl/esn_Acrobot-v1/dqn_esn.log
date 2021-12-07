@@ -1,0 +1,34 @@
+[2021-12-07 18:51:45,260][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 18:51:45,260][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_1.gif
+[2021-12-07 19:25:10,578][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:25:10,579][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_1.gif
+[2021-12-07 19:26:31,540][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:26:31,540][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_1.gif
+[2021-12-07 19:26:40,453][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:26:40,453][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_2.gif
+[2021-12-07 19:26:52,819][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:26:52,819][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_3.gif
+[2021-12-07 19:27:34,852][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:27:34,852][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_4.gif
+[2021-12-07 19:27:43,771][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:27:43,771][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_5.gif
+[2021-12-07 19:35:20,791][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:35:20,791][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_1.gif
+[2021-12-07 19:38:57,933][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:38:57,933][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_2.gif
+[2021-12-07 19:40:35,583][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:40:35,584][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_3.gif
+[2021-12-07 19:41:54,150][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:41:54,151][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_4.gif
+[2021-12-07 19:43:06,551][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:43:06,551][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_5.gif
+[2021-12-07 19:44:39,050][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:44:39,050][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_6.gif
+[2021-12-07 19:45:43,847][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:45:43,847][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_7.gif
+[2021-12-07 19:46:41,933][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:46:41,933][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_8.gif
+[2021-12-07 19:47:39,568][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:47:39,568][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_9.gif
+[2021-12-07 19:49:04,257][matplotlib.animation][INFO] - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+[2021-12-07 19:49:04,258][matplotlib.animation][INFO] - MovieWriter._run: running command: convert -size 500x500 -depth 8 -delay 1.6666666666666667 -loop 0 rgba:- render_10.gif

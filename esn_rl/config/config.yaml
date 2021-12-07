@@ -7,13 +7,14 @@ esn_model:
   zero_density: 0.05
 
 environment:
-  name: CartPole-v0
-  t_max: 200
+  # name: CartPole-v0
+  name: Acrobot-v1
+  t_max: 500
 
 cma_es:
-  max_num_gen: 30 
-  population_size: 200 
-  sigma: 30.0
+  max_num_gen: 10 
+  population_size: 1000 
+  sigma: 1.5
 
 # hydra setting
 hydra:
