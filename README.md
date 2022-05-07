@@ -1,4 +1,4 @@
-# Simple implementation of Echo State Network with NARMA benchmark task
+# Simple implementation of Echo State Network with NARMA benchmark task and RL with esn
 basic echo state network implementation
 
 ## problem setting
